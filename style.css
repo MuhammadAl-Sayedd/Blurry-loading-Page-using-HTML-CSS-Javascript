@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+
+.bg {
+  background: url("https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80")
+    no-repeat center center/cover;
+  position: absolute;
+  top: -30;
+  left: -30;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  z-index: -1;
+  filter: blur(30px);
+}
+
+.loading-text {
+  color: white;
+  font-size: 30px;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  position: absolute;
+  top: 71%;
+  left: 56%;
+  margin-top: -100px;
+  margin-left: -100px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  transition: transform 0.3s;
+  border-left-color: transparent;
+
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* animation-delay: 2s; */
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-direction: reverse;
+  /* animation: spin 3s linear 2s infinite reverse; */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
